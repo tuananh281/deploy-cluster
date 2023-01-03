@@ -12,7 +12,7 @@ pipeline {
                             sh "cat deployment.yaml"
                             sh "git add ."
                             sh "git commit -m 'Done get changemanifest: ${env.BUILD_NUMBER}'"
-                            sh "git push https://github.com/tuananh281/cicd-pipeline-train-schedule-dockerdeploy.git HEAD:main"
+                            sh "git push https://github.com/tuananh281/deploy-cluster.git HEAD:main"
                         }
                     }
                 }
