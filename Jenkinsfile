@@ -10,7 +10,7 @@ pipeline {
                             sh "git config user.email vantuananh2811@gmail.com"
                             sh "git config user.name 'tuananh281'"
                             sh "cat deployment.yaml"
-                            sh "sed -i 's+tuannanhh/train-schedule:*+tuannanhh/train-schedule:${DOCKERTAG}+g' deployment.yaml"
+                            sh "sed -i 's+tuannanhh/train-schedule:latest+tuannanhh/train-schedule:${DOCKERTAG}+g' deployment.yaml"
                             sh "cat deployment.yaml"
                             sh "git add ."
                             sh "git commit -m 'Done get : ${env.BUILD_NUMBER}'"
