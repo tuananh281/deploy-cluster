@@ -16,7 +16,7 @@ spec:
         app: nodeapp
     spec:
       containers:
-        - name: train-schedule
+        - name: test-gitops
           image: tuannanhh/test-gitops:latest
           imagePullPolicy: Always
           ports:
