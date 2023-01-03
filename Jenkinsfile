@@ -9,7 +9,7 @@ pipeline {
                         // withCredentials([usernamePassword(credentialsId: 'tuananh_github')]){
                             sh "git config user.email vantuananh2811@gmail.com"
                             sh "git config user.name 'tuananh281'"
-                            sh "git config --unset http.proxy"
+                            // sh "git config --unset http.proxy"
                             sh "cat deployment.yaml"
                             sh "sed -i 's+tuannanhh/test-gitops:latest+tuannanhh/test-gitops:${DOCKERTAG}+g' deployment.yaml"
                             sh "cat deployment.yaml"
