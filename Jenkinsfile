@@ -7,8 +7,8 @@ pipeline {
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                         withCredentials([usernamePassword(credentialsId: 'tuananh_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
                         // withCredentials([usernamePassword(credentialsId: 'tuananh_github')]){
-                            sh "git config --global user.email vantuananh2811@gmail.com"
-                            sh "git config --global user.name 'tuananh281'"
+                            sh "git config user.email vantuananh2811@gmail.com"
+                            sh "git config user.name 'tuananh281'"
                             sh "cat deployment.yaml"
                             sh "sed -i 's+tuannanhh/train-schedule:*+tuannanhh/train-schedule:${DOCKERTAG}+g' deployment.yaml"
                             sh "cat deployment.yaml"
