@@ -16,7 +16,7 @@ pipeline {
                             sh "git add ."
                             sh "git commit -m 'Done get : ${env.BUILD_NUMBER}'"
                             sh "echo ${GIT_PASSWORD}"
-                            // sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/deploy-cluster.git HEAD:main"
+                            sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/deploy-cluster.git HEAD:main"
                         }
                     }
                 }
