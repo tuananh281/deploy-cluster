@@ -4,7 +4,7 @@ pipeline {
         stage('Update git') {
             steps {
                 script {
-                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILUE'){
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                         withCredentials([usernamePassword(credentialsId: 'tuananh_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
                             sh "cat deployment.yaml"
                             sh "sed -i s+tuannanhh/train-schedule:*+tuannanhh/train-schedule:${DOCKERTAG}+g" deployment.yaml
